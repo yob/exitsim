@@ -1,0 +1,6 @@
+steps:
+  - command: "go build -o exitsim . && ./exitsim exit --code 0"
+    label: "exit 0"
+
+  - command: "go build -o exitsim . && ./exitsim exit --code 1"
+    label: "exit 1"
