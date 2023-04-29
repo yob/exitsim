@@ -4,3 +4,9 @@ steps:
 
   - command: "go build -o exitsim . && ./exitsim exit --code 1"
     label: "exit 1"
+
+  - command: "go build -o exitsim . && ./exitsim exit --code 100"
+    label: "exit 100"
+
+  - command: "go build -o exitsim . && ./exitsim exit --code 255"
+    label: "exit 255"
