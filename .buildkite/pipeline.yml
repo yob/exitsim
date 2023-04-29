@@ -10,3 +10,9 @@ steps:
 
   - command: "go build -o exitsim . && ./exitsim exit --code 255"
     label: "exit 255"
+
+  - command: "go build -o exitsim . && ./exitsim signal --name sigterm"
+    label: "sigterm"
+
+  - command: "go build -o exitsim . && ./exitsim signal --name sigkill"
+    label: "sigkill"
