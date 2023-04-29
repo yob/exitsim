@@ -1,5 +1,5 @@
 steps:
-  - command: ".buildkite/steps/sleep"
+  - command: "/home/jh/tmp/exitsim exit --code 0 --sleep 60"
     label: "sleep"
 
   - command: "go build -o exitsim . && ./exitsim exit --code 0"
