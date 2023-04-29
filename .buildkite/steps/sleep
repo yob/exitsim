@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+go build -o exitsim .
+./exitsim exit --code 0 --sleep 60
