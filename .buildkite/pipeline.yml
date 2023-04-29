@@ -1,4 +1,7 @@
 steps:
+  - command: "go build -o exitsim . && ./exitsim exit --code 0 --sleep 60"
+    label: "sleep"
+
   - command: "go build -o exitsim . && ./exitsim exit --code 0"
     label: "exit 0"
 

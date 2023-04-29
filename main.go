@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"syscall"
+	"time"
 
 	"github.com/urfave/cli/v2"
 )
@@ -22,8 +23,17 @@ func main() {
 					Usage:    "0-255",
 					Required: true,
 				},
+				&cli.IntFlag{
+					Name:  "sleep",
+					Usage: "0-100",
+				},
 			},
 			Action: func(c *cli.Context) error {
+				sleepFor := c.Int("sleep")
+				if sleepFor > 0 {
+					log.Printf("sleeping for %d seconds", sleepFor)
+					time.Sleep(time.Duration(sleepFor * int(time.Second)))
+				}
 				code := c.Int("code")
 				if code >= 0 && code <= 255 {
 					return cli.Exit(fmt.Sprintf("exiting with code: %d", code), code)
